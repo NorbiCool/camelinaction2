@@ -12,7 +12,7 @@
   <inceptionYear>2015</inceptionYear>
 
   <prerequisites>
-    <maven>3.5.0</maven>
+    <maven>3.5.4</maven>
   </prerequisites>
 
   <developers>
@@ -58,7 +58,7 @@
 
     <activemq-version>5.15.7</activemq-version>
     <activemq-karaf-version>5.13.8</activemq-karaf-version>
-    <camel-version>2.25.0</camel-version>
+    <camel-version>2.24.3</camel-version>
     <cxf-version>3.3.5</cxf-version>
     <hawtio-version>1.4.68</hawtio-version>
     <commons-dbcp2-version>2.5.0</commons-dbcp2-version>
@@ -82,6 +82,15 @@
     <vertx-version>3.6.3</vertx-version>
     <weld-version>2.4.7.Final</weld-version>
     <wildfly-swarm-version>2017.11.0</wildfly-swarm-version>
+    <jakarta-jaxb-version>2.3.2</jakarta-jaxb-version>
+    <jaxb-version>2.3.2</jaxb-version>
+
+        <jaxb-bundle-version>2.3.1_1</jaxb-bundle-version>
+        <jakarta-api-version>2.1.5</jakarta-api-version>
+        <jakarta-jaxb-version>2.3.2</jakarta-jaxb-version>
+        <glassfish-javax-json>1.0.4</glassfish-javax-json>
+        <glassfish-jaxb-runtime-version>2.3.2</glassfish-jaxb-runtime-version>
+        <jaxb2-maven-plugin-version>2.5.0</jaxb2-maven-plugin-version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -181,7 +190,7 @@
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
-          <version>${maven-bundle-plugin-version}</version>        
+          <version>${maven-bundle-plugin-version}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.camel</groupId>
@@ -192,12 +201,12 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
           <version>1.10</version>
-        </plugin>                
+        </plugin>
         <plugin>
           <groupId>org.wildfly.plugins</groupId>
           <artifactId>wildfly-maven-plugin</artifactId>
           <version>1.1.0.Alpha11</version>
-        </plugin>        
+        </plugin>
       </plugins>
     </pluginManagement>
 
@@ -374,6 +383,32 @@
         <artifactId>mina-core</artifactId>
         <version>2.0.9</version>
       </dependency>
+
+
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-xml-jaxp</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-xml-jaxb</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-jaxb</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+<dependency>
+    <groupId>javax.xml.bind</groupId>
+    <artifactId>jaxb-api</artifactId>
+    <version>2.3.1</version>
+</dependency>
+
     </dependencies>
 
   </dependencyManagement>
